@@ -56,17 +56,13 @@ export default class App extends Component {
   // Upload an image
   uploadImage = file => {
     RNCloudinaryUnsigned.upload(file)
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => console.log(res))
       .catch(err => console.error(err));
   };
   // Delete an image
   deleteImage = token => {
     RNCloudinaryUnsigned.delete(token)
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => console.log(res))
       .catch(err => console.error(err));
   };
 }
