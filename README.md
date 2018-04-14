@@ -1,5 +1,7 @@
 # react-native-cloudinary-unsigned
 
+![Cloudinary Logo](https://res.cloudinary.com/cloudinary/image/upload/b_rgb:ffffff,c_scale,w_500/v1/logo/for_white_bg/cloudinary_logo_for_white_bg.png)
+
 This module helps you to send files to [Cloudinary](https://cloudinary.com) through an [upload profile](https://cloudinary.com/console/settings/upload).
 
 ## Getting started
