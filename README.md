@@ -2,17 +2,6 @@
 
 This module helps you to send files to [Cloudinary](https://cloudinary.com) through an [upload profile](https://cloudinary.com/console/settings/upload).
 
-## How safe / secure is it to use unsigned upload from mobile clients?
-
-The only "risk" in using unsigned uploads with Cloudinary is the possibility that another person will view the source code of your uploader, replicate the configuration and issue uploads from another place onto your account.
-
-However, the following is worth mentioning:
-
-* This will "only" allow them to initiate unsigned-uploads to your account (may result with a certain Storage/Transformations quotas abuse).
-* This will NOT allow anyone to Delete / Edit / Overwrite any of your existing content on the account. A list of supported unsigned-upload options is available here.
-* As a safety measure, from time to time, you may want to change your upload-preset's name (can be done via the account settings) to reduce the possibility of someone using your configuration without your permission.
-* Finally we must say that until the writing of these lines we haven't heard of anyone of our customers experiencing this kind of offense.
-
 ## Getting started
 
 `$ npm install react-native-cloudinary-unsigned --save`
@@ -80,3 +69,14 @@ export default class App extends Component {
   };
 }
 ```
+
+## How safe / secure is it to use unsigned upload from mobile clients?
+
+The only "risk" in using unsigned uploads with Cloudinary is the possibility that another person will view the source code of your uploader, replicate the configuration and issue uploads from another place onto your account.
+
+However, the following is worth mentioning:
+
+* This will "only" allow them to initiate unsigned-uploads to your account (may result with a certain Storage/Transformations quotas abuse).
+* This will NOT allow anyone to Delete / Edit / Overwrite any of your existing content on the account. A list of supported unsigned-upload options is available here.
+* As a safety measure, from time to time, you may want to change your upload-preset's name (can be done via the account settings) to reduce the possibility of someone using your configuration without your permission.
+* Finally we must say that until the writing of these lines we haven't heard of anyone of our customers experiencing this kind of offense.
