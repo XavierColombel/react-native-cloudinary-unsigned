@@ -1,6 +1,6 @@
 {
   "name": "react-native-cloudinary-unsigned",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Upload/delete images to/from Cloudinary (unsigned upload) using React Native.",
   "main": "index.js",
   "scripts": {
