@@ -1,5 +1,5 @@
 import axios from "axios";
-import RNFetchBlob from "react-native-fetch-blob";
+import fileType from "react-native-file-type";
 
 const API_END_POINT = "https://api.cloudinary.com/v1_1/";
 
@@ -31,31 +31,29 @@ class RNCloudinaryUnsigned {
     return new Promise((resolve, reject) => {
       if (CLOUD_NAME && UPLOAD_PROFILE_NAME) {
         if (file) {
-          RNFetchBlob.fs
-            .stat(file)
-            .then(stats => console.log("stats", stats))
-            .catch(err => console.log(err));
-          const url = `${API_END_POINT}${CLOUD_NAME}/image/upload`;
-          const fd = new FormData();
-          fd.append("upload_preset", UPLOAD_PROFILE_NAME);
-          fd.append("file", {
-            uri: file.uri,
-            type: "image/jpg",
-            name: "upload.jpg"
-          });
-          const config = {
-            headers: {
-              "Content-Type": "multipart/form-data"
-            }
-          };
-          axios
-            .post(url, fd, config)
-            .then(res => {
-              resolve(res);
-            })
-            .catch(err => {
-              reject(err);
+          fileType(file).then(type => {
+            const url = `${API_END_POINT}${CLOUD_NAME}/image/upload`;
+            const fd = new FormData();
+            fd.append("upload_preset", UPLOAD_PROFILE_NAME);
+            fd.append("file", {
+              uri: file,
+              type: type.mime,
+              name: `upload.${type.ext}`
             });
+            const config = {
+              headers: {
+                "Content-Type": "multipart/form-data"
+              }
+            };
+            axios
+              .post(url, fd, config)
+              .then(res => {
+                resolve(res);
+              })
+              .catch(err => {
+                reject(err);
+              });
+          });
         } else {
           reject("You must send a file path to the function.");
         }

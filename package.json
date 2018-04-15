@@ -1,15 +1,13 @@
 {
   "name": "react-native-cloudinary-unsigned",
   "version": "1.0.4",
-  "description": "Upload/delete images to/from Cloudinary (unsigned upload) using React Native.",
+  "description":
+    "Upload/delete images to/from Cloudinary (unsigned upload) using React Native.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "react-native",
-    "cloudinary"
-  ],
+  "keywords": ["react-native", "cloudinary"],
   "author": "Xavier Colombel",
   "license": "",
   "peerDependencies": {
@@ -17,7 +15,8 @@
   },
   "dependencies": {
     "axios": "git+https://github.com/axios/axios.git",
-    "react-native-fetch-blob": "git+https://github.com/joltup/react-native-fetch-blob.git"
+    "react-native-file-type":
+      "git+https://github.com/prscX/react-native-file-type.git"
   },
   "repository": {
     "type": "git",
