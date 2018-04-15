@@ -68,6 +68,20 @@ export default class App extends Component {
 }
 ```
 
+## API
+
+### `upload(filepath: string, filename?: string): Promise<void>`
+
+Upload the file to Cloudinary using at least `filepath` parameter.
+
+It could be useful to add the `filename` optional parameter that will act as a prefix to final file name. In your preset parameters, you might set `Use filename` and `Unique filename` to `Yes`.
+
+![preset](https://preview.ibb.co/b0CTZ7/preset.png)
+
+### `delete(token: string): Promise<void>`
+
+Delete the uploaded file using the `delete_token` returned in the upload response. After 10 minutes has passed, the image cannot be deleted from the client side.
+
 ## How safe / secure is it to use unsigned upload from mobile clients?
 
 The only "risk" in using unsigned uploads with Cloudinary is the possibility that another person will view the source code of your uploader, replicate the configuration and issue uploads from another place onto your account.

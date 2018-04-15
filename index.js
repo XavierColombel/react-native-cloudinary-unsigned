@@ -27,18 +27,21 @@ class RNCloudinaryUnsigned {
       }
     });
   };
-  upload = file => {
+  upload = (file, filename = null) => {
     return new Promise((resolve, reject) => {
       if (CLOUD_NAME && UPLOAD_PROFILE_NAME) {
         if (file) {
           fileType(file).then(type => {
             const url = `${API_END_POINT}${CLOUD_NAME}/image/upload`;
             const fd = new FormData();
+            const name = filename
+              ? `${filename}.${type.ext}`
+              : `upload.${type.ext}`;
             fd.append("upload_preset", UPLOAD_PROFILE_NAME);
             fd.append("file", {
+              name,
               uri: file,
-              type: type.mime,
-              name: `upload.${type.ext}`
+              type: type.mime
             });
             const config = {
               headers: {
