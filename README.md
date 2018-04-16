@@ -4,6 +4,8 @@
 
 This module helps you to send files to [Cloudinary](https://cloudinary.com) through an [upload profile](https://cloudinary.com/console/settings/upload).
 
+Do you like this library? Let me a star! ⭐️👍
+
 ## Getting started
 
 `$ npm install react-native-cloudinary-unsigned --save`
